@@ -20,8 +20,6 @@ def create_lyrics_ppt(data):
         key = song[3]
 
         for slide in slides:
-
-
             content_string = ""
             structure_text = ""
             # flag to skip lines when structure type = 4
@@ -84,4 +82,5 @@ def create_chords_ppt(data):
             this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_chords.pptx")
+
 
