@@ -1,5 +1,6 @@
 import utils.functions as functions
-import src.ppt as ppt
+import utils.ppt as ppt
+import utils.song_functions as sng
 import sys
 
 
@@ -36,10 +37,15 @@ def main():
 
     print("Ended song selection")
 
-    ppt.ppt_test()
+    # Read content of selected songs
+    song_data = []
+    for song in selected_songs:
+        song_data.append(sng.read_file(song[2]))
 
     # ToDo: ask user after which song to insert the "After Sermon" slide
     # sermon_after = input("Add 'sermon slide' after song number: ")
+
+    ppt.create_lyrics_ppt(song_data)
 
 
 if __name__ == "__main__":
