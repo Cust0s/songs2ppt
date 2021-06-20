@@ -12,6 +12,12 @@ from pptx import Presentation
 # 4 = paragraph type for chords only
 
 def create_lyrics_ppt(data):
+    """
+    Creates the lyrics ppt file. This excludes slides for chords only
+    structure elements (e.g., Instrumental, Interlude) and excludes
+    the chords lines.
+    :param data: The complete data for all selected songs
+    """
     my_presentation = Presentation("dewg_template_lyrics.pptx")
     for song in data:
         slides = song[0]
@@ -54,6 +60,12 @@ def create_lyrics_ppt(data):
 
 
 def create_chords_ppt(data):
+    """
+    Creates the chords ppt file. This includes slides for chords only
+    structure elements (e.g., Instrumental, Interlude) and includes
+    the chords lines.
+    :param data: The complete data for all selected songs
+    """
     my_presentation = Presentation("dewg_template_chords.pptx")
     for song in data:
         slides = song[0]

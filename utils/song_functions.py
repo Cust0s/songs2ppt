@@ -1,5 +1,10 @@
 def read_file(file_path):
-
+    """
+    Reads the file from the argument file path and stores its
+    contents in a structured manner.
+    :param file_path: The file path to the .song file
+    :return: Structured data of the song
+    """
     with open(file_path) as f:
         # initialize the list that contains all the lyrics and chords
         slides = [[]]

@@ -99,6 +99,13 @@ def print_songs(song_list, table_name):
 
 
 def add_song(song_list):
+    """
+    Prints the complete song list and prompts the user to enter
+    the index of the song to add. Returns the song to add.
+    Includes input validation.
+    :param song_list: The total song list to print
+    :return: The selected song
+    """
     # print the song list
     print_songs(song_list, "Available Songs")
 
@@ -116,6 +123,11 @@ def add_song(song_list):
 
 
 def user_continue():
+    """
+    Prompt the user if they want to continue selecting songs.
+    Includes input validation.
+    :return: True or False, depending on user choice
+    """
     while True:
         try:
             reply = input("Do you want to add another song? (y/n) ").lower()
