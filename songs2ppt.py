@@ -46,6 +46,7 @@ def main():
     # sermon_after = input("Add 'sermon slide' after song number: ")
 
     ppt.create_lyrics_ppt(song_data)
+    ppt.create_chords_ppt(song_data)
 
 
 if __name__ == "__main__":

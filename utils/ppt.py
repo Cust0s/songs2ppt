@@ -12,6 +12,50 @@ from pptx import Presentation
 # 4 = paragraph type for chords only
 
 def create_lyrics_ppt(data):
+    my_presentation = Presentation("dewg_template_lyrics.pptx")
+    for song in data:
+        slides = song[0]
+        title = song[1]
+        artist = song[2]
+        key = song[3]
+
+        for slide in slides:
+
+
+            content_string = ""
+            structure_text = ""
+            # flag to skip lines when structure type = 4
+            skip_flag = False
+            for line in slide:
+                if line[0] == 4:
+                    # skip slide of this type (i.e., interlude, instrumental)
+                    skip_flag = True
+                elif line[0] == 1:
+                    skip_flag = False       # reset skip flag as the following lines are needed
+                    structure_text += line[1]
+                    structure_text += " & "
+                    pass
+                elif line[0] == 2:
+                    # skip chord lines
+                    pass
+                elif not skip_flag:
+                    content_string += line[1]
+                    content_string += "\n"
+            if not skip_flag:
+
+                # create new slide
+                this_slide = my_presentation.slides.add_slide(my_presentation.slide_layouts[0])
+                # add song title to top right placeholder
+                this_slide.placeholders[10].text = title
+
+                # add main content to the slide
+                this_slide.placeholders[1].text = content_string
+                this_slide.placeholders[0].text = structure_text[:-3]
+
+    my_presentation.save("presentation_lyrics.pptx")
+
+
+def create_chords_ppt(data):
     my_presentation = Presentation("dewg_template_chords.pptx")
     for song in data:
         slides = song[0]
@@ -39,5 +83,5 @@ def create_lyrics_ppt(data):
             this_slide.placeholders[1].text = content_string
             this_slide.placeholders[0].text = structure_text[:-3]
 
-    my_presentation.save("test2.pptx")
+    my_presentation.save("presentation_chords.pptx")
 
