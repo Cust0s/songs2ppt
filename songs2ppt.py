@@ -45,6 +45,12 @@ def main():
     # ToDo: ask user after which song to insert the "After Sermon" slide
     # sermon_after = input("Add 'sermon slide' after song number: ")
 
+    for i in range(0, len(song_data)):
+        song = song_data[i]
+        # Todo: add user input of key
+        key = input("enter temporary key: ")
+        sng.change_key(song[0], song[3], key)
+
     ppt.create_lyrics_ppt(song_data)
     ppt.create_chords_ppt(song_data)
 

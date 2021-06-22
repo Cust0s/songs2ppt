@@ -1,8 +1,5 @@
 from pptx import Presentation
 
-
-# Todo: split ppt creation into lyrics and chord presentations
-# Todo: Add transpose feature
 # Todo: make lyrics version in normal font
 
 # 0 = new slide indicator
@@ -10,6 +7,7 @@ from pptx import Presentation
 # 2 = chords
 # 3 = lyrics
 # 4 = paragraph type for chords only
+
 
 def create_lyrics_ppt(data):
     """
@@ -22,8 +20,8 @@ def create_lyrics_ppt(data):
     for song in data:
         slides = song[0]
         title = song[1]
-        artist = song[2]
-        key = song[3]
+        # artist = song[2]
+        # key = song[3]
 
         for slide in slides:
             content_string = ""
@@ -66,12 +64,17 @@ def create_chords_ppt(data):
     the chords lines.
     :param data: The complete data for all selected songs
     """
+
+    # Todo: Add current song key to top right corner
+    # Todo: Make lyrics text gray to focus on chords ->
+    #  https://stackoverflow.com/questions/24729098/text-color-in-python-pptx-module
+
     my_presentation = Presentation("dewg_template_chords.pptx")
     for song in data:
         slides = song[0]
         title = song[1]
-        artist = song[2]
-        key = song[3]
+        # artist = song[2]
+        # key = song[3]
 
         for slide in slides:
             # create new slide
@@ -94,5 +97,3 @@ def create_chords_ppt(data):
             this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_chords.pptx")
-
-
