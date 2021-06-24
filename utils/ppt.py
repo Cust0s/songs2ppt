@@ -7,6 +7,8 @@ from pptx import Presentation
 # 2 = chords
 # 3 = lyrics
 # 4 = paragraph type for chords only
+# 5 = lyrics line for chord ppt only
+# 6 = lyrics line for lyrics ppt only
 
 
 def create_lyrics_ppt(data):
@@ -37,8 +39,8 @@ def create_lyrics_ppt(data):
                     structure_text += line[1]
                     structure_text += " & "
                     pass
-                elif line[0] == 2:
-                    # skip chord lines
+                elif line[0] == 2 or line[0] == 5:
+                    # skip chord lines or lyrics line for chord only
                     pass
                 elif not skip_flag:
                     content_string += line[1]
@@ -85,7 +87,10 @@ def create_chords_ppt(data):
             content_string = ""
             structure_text = ""
             for line in slide:
-                if line[0] == 1 or line[0] == 4:
+                if line[0] == 6:
+                    # skip line if it is lyrics for lyrics ppt only
+                    pass
+                elif line[0] == 1 or line[0] == 4:
                     structure_text += line[1]
                     structure_text += " & "
                 else:
