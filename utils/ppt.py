@@ -70,7 +70,7 @@ def create_lyrics_ppt(data):
                 # add song title to top right placeholder
                 this_slide.placeholders[10].text = title
                 # add main content to the slide
-                this_slide.placeholders[1].text = content_string
+                this_slide.placeholders[1].text = content_string[:-1]
                 this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_lyrics.pptx")
@@ -128,7 +128,10 @@ def create_chords_ppt(data):
                 # add song title to top right placeholder
                 this_slide.placeholders[10].text = title
                 # add main content to the slide
-                this_slide.placeholders[1].text = content_string
+                if content_string.startswith('\n'):
+                    this_slide.placeholders[1].text = content_string[1:-1]
+                else:
+                    this_slide.placeholders[1].text = content_string[:-1]
                 this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_chords.pptx")
