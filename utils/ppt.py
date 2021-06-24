@@ -1,7 +1,6 @@
 from pptx import Presentation
 
-# Todo: make lyrics version in normal font
-# Todo: Add structure text to top left placeholder for slides that have been split in two
+# Todo: decrease chords font size
 
 # 0 = new slide indicator
 # 1 = paragraph type (i.e., chorus, verse)
@@ -30,15 +29,16 @@ def create_lyrics_ppt(data):
 
         # initialize variables
         no_reset_flag = False
-        skip_flag = False
         content_string = ""
         structure_text = ""
+        last_structure_text = ""
 
         for slide in slides:
             if no_reset_flag:
                 no_reset_flag = False  # prevents the content and structure strings to be reset if True
             else:
                 content_string = ""
+                last_structure_text = structure_text    # save the previous structure text before resetting it
                 structure_text = ""
 
             for line in slide:
@@ -71,7 +71,10 @@ def create_lyrics_ppt(data):
                     this_slide.placeholders[1].text = content_string[1:].rstrip()
                 else:
                     this_slide.placeholders[1].text = content_string.rstrip()
-                this_slide.placeholders[0].text = structure_text[:-3]
+                if structure_text == "":
+                    this_slide.placeholders[0].text = last_structure_text[:-3]
+                else:
+                    this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_lyrics.pptx")
 
@@ -99,12 +102,14 @@ def create_chords_ppt(data):
         no_reset_flag = False
         content_string = ""
         structure_text = ""
+        last_structure_text = ""
 
         for slide in slides:
             if no_reset_flag:
                 no_reset_flag = False  # prevents the content and structure strings to be reset if True
             else:
                 content_string = ""
+                last_structure_text = structure_text  # save the previous structure text before resetting it
                 structure_text = ""
 
             for line in slide:
@@ -132,6 +137,9 @@ def create_chords_ppt(data):
                     this_slide.placeholders[1].text = content_string[1:].rstrip()
                 else:
                     this_slide.placeholders[1].text = content_string.rstrip()
-                this_slide.placeholders[0].text = structure_text[:-3]
+                if structure_text == "":
+                    this_slide.placeholders[0].text = last_structure_text[:-3]
+                else:
+                    this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_chords.pptx")
