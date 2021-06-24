@@ -30,6 +30,7 @@ def create_lyrics_ppt(data):
 
         # initialize variables
         no_reset_flag = False
+        skip_flag = False
         content_string = ""
         structure_text = ""
 
@@ -40,15 +41,11 @@ def create_lyrics_ppt(data):
                 content_string = ""
                 structure_text = ""
 
-            # flag to skip lines when structure type = 4
-            skip_flag = False
-
             for line in slide:
                 if line[0] == 4:
                     # skip slide of this type (i.e., interlude, instrumental)
-                    skip_flag = True
+                    pass
                 elif line[0] == 1:
-                    skip_flag = False       # reset skip flag as the following lines are needed
                     structure_text += line[1]
                     structure_text += " & "
                     pass
@@ -60,17 +57,20 @@ def create_lyrics_ppt(data):
                     # skip new slide indicator for chords ppt
                     # do not advance to next slide, but combine current and next slide into one
                     no_reset_flag = True  # stops new slides from being added and stops strings resetting
-                elif not skip_flag:
+                else:
                     content_string += line[1]
                     content_string += "\n"
 
-            if not skip_flag and not no_reset_flag:
+            if not no_reset_flag:
                 # create new slide
                 this_slide = my_presentation.slides.add_slide(my_presentation.slide_layouts[0])
                 # add song title to top right placeholder
                 this_slide.placeholders[10].text = title
                 # add main content to the slide
-                this_slide.placeholders[1].text = content_string[:-1]
+                if content_string.startswith('\n'):
+                    this_slide.placeholders[1].text = content_string[1:].rstrip()
+                else:
+                    this_slide.placeholders[1].text = content_string.rstrip()
                 this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_lyrics.pptx")
@@ -129,9 +129,9 @@ def create_chords_ppt(data):
                 this_slide.placeholders[10].text = title
                 # add main content to the slide
                 if content_string.startswith('\n'):
-                    this_slide.placeholders[1].text = content_string[1:-1]
+                    this_slide.placeholders[1].text = content_string[1:].rstrip()
                 else:
-                    this_slide.placeholders[1].text = content_string[:-1]
+                    this_slide.placeholders[1].text = content_string.rstrip()
                 this_slide.placeholders[0].text = structure_text[:-3]
 
     my_presentation.save("presentation_chords.pptx")
