@@ -53,6 +53,14 @@ def read_file(file_path):
                     cur_slide += 1
                     # add new slide to list
                     slides.append([])
+                if line_purpose == 7 or line_purpose == 8:
+                    # indicator for slide breaks in only one of two ppt files
+                    # save line with indicator in data storage so that ppt creation can identify slides that need to be
+                    #  combined into one.
+                    slides[cur_slide].append([line_purpose, line[1:]])
+                    cur_slide += 1
+                    slides.append([])
+
                 else:
                     slides[cur_slide].append([line_purpose, line[1:]])
 
