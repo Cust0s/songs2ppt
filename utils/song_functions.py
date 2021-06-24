@@ -45,15 +45,16 @@ def read_file(file_path):
         line = f.readline().replace('\n', '')
 
         while line:
-            line_purpose = int(line[0])
-            if line_purpose == 0:
-                # put following lines in new slide
-                # advance slide index
-                cur_slide += 1
-                # add new slide to list
-                slides.append([])
-            else:
-                slides[cur_slide].append([line_purpose, line[1:]])
+            if line[0] != '#':      # ignore comment lines
+                line_purpose = int(line[0])
+                if line_purpose == 0:
+                    # put following lines in new slide
+                    # advance slide index
+                    cur_slide += 1
+                    # add new slide to list
+                    slides.append([])
+                else:
+                    slides[cur_slide].append([line_purpose, line[1:]])
 
             line = f.readline().replace('\n', '')
 
