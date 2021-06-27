@@ -1,6 +1,10 @@
 from pptx import Presentation
 
 # Todo: decrease chords font size
+# Todo: fix bug with structure text E.g. Chorus in two slides but only first slide has structure text and the second
+#  slide has instrumental structure text, it will not print (chorus & Instrumental) but only (Instrumental) see good
+#  and gracious king
+
 
 # 0 = new slide indicator
 # 1 = paragraph type (i.e., chorus, verse)
