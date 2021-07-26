@@ -2,7 +2,6 @@ import sys
 
 # define keys that require sharps
 sharp_keys = ("g", "em", "d", "bm", "a", "f#m", "e", "c#m", "b", "g#m", "f#", "d#m", "c#", "a#m", "c", "am")
-
 # n.1 symbolises sharps and n.2 symbolises flats
 # values are unique
 notes = {
@@ -101,8 +100,11 @@ def change_key(song, actual_key, desired_key):
         if note == actual_key:
             actual_index = int(notes.get(note))
 
-    # Todo: check whether desired key requires sharps or flats
-    is_sharp = True
+    # check if the new key requires sharps or flats
+    if desired_key.lower() in sharp_keys:
+        is_sharp = True
+    else:
+        is_sharp = False
 
     # calculate number of half steps to transpose
     difference = desired_index - actual_index   # calculate difference
