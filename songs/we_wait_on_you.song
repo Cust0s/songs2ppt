@@ -1,0 +1,33 @@
+We Wait On You
+Steve Crown
+D
+# Thc first three lines are 1. Song Title, 2. Artist Name, 3. Key
+# The following line indicators are used:
+# 0 = begin a new slide
+# 1 = paragraph type (i.e., chorus, verse)
+# 2 = line containing only chords
+# 3 = line containing only lyrics
+# 4 = Entire paragraph for chords ppt only (E.g., 4Instrumental)
+# 5 = lyrics line for chord ppt only
+# 6 = lyrics line for lyrics ppt only
+# 7 = begin new slide (only in chords ppt)
+# 8 = begin new slide (only in lyrics ppt)
+1Verse
+2D     A               Em      G
+3Holy Spirit, you are welcome
+2D          A               G
+3Fill this temple with your presence
+2D     A               Em      G
+3Holy Spirit, you are welcome
+2D          A               G
+3Fill this temple with your presence
+0
+1Chorus
+2              D
+3We wait on you
+2     A           Em     G
+3Lord, we wait on you
+2              D
+3We wait on you
+2   A             G
+3Lord, we wait on you
