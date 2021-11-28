@@ -1,0 +1,33 @@
+Eagle's Wings
+Hillsong
+G
+# The first three lines are 1. Song Title, 2. Artist Name, 3. Key
+# The following line indicators are used:
+# 0 = begin a new slide
+# 1 = paragraph type (i.e., chorus, verse)
+# 2 = line containing only chords
+# 3 = line containing only lyrics
+# 4 = Entire paragraph for chords ppt only (E.g., 4Instrumental)
+# 5 = lyrics line for chord ppt only
+# 6 = lyrics line for lyrics ppt only
+# 7 = begin new slide (only in chords ppt)
+# 8 = begin new slide (only in lyrics ppt)
+1Verse
+2Am         D         G             C
+3Here I am waiting, Abide in me I pray
+2Am         D           G
+3Here I am longing for you
+2Am          D          G               C
+3Hide me in your love, bring me to my knees
+2Am          D              G
+3May I know Jesus more and more
+0
+1Chorus
+2G            C           Am
+3Come live in me, all my life
+2     D
+3Take over
+2G               C              Am
+3Come breathe in me and I will rise
+2    D      G
+3On Eagles Wings
