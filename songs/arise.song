@@ -1,0 +1,45 @@
+Arise
+Don Moen
+E
+# The first three lines are 1. Song Title, 2. Artist Name, 3. Key
+# The following line indicators are used:
+# 0 = begin a new slide
+# 1 = paragraph type (i.e., chorus, verse)
+# 2 = line containing only chords
+# 3 = line containing only lyrics
+# 4 = Entire paragraph for chords ppt only (E.g., 4Instrumental)
+# 5 = lyrics line for chord ppt only
+# 6 = lyrics line for lyrics ppt only
+# 7 = begin new slide (only in chords ppt)
+# 8 = begin new slide (only in lyrics ppt)
+1Verse
+2E              B         D              A2
+3One thing we ask of You, One thing that we desire
+2E           B            D              A2
+3That as we worship You, Lord, come and change our lives
+2  E      B      C#m    A2
+3Arise, arise, arise, arise
+0
+1Chorus
+2 E               B        C#m              A
+3Arise, take Your place Be enthroned on our praise
+2 E               B        C#m              A
+3Arise, King of kings, Holy God, as we sing
+2 E     B     C#m     A
+3Arise
+2 E     B     C#m     A
+3Arise
+0
+1Bridge
+2E
+3We lift you up (3x)
+2       D
+3On our Praise
+0
+1Chorus
+5[Key change]
+5
+2 F               C        Dm              Bb
+3Arise, take Your place Be enthroned on our praise
+2 F              C          Dm           Bb
+3Arise, King of kings, Holy God, as we sing
