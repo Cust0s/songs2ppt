@@ -13,8 +13,8 @@ D
 # 7 = begin new slide (only in chords ppt)
 # 8 = begin new slide (only in lyrics ppt)
 4Intro
-2Bm D G A
-2Bm D G A
+2G A Bm
+2G A D
 7
 1Verse 1
 2D         A
@@ -38,8 +38,8 @@ D
 5
 5
 4Interlude
-2Bm D G A
-2Bm D G A
+2G A Bm
+2G A D
 0
 1Verse 2
 2D          A
@@ -75,12 +75,6 @@ D
 3You alone deserve our praise
 2           A              D/F#
 3You're the name above all names
-7
-4Turn
-2Em Bm D
-2A D/F#
-2Em Bm D
-2A D/F#
 0
 1Chorus
 2               G     Bm  A
